@@ -6,7 +6,7 @@ A full-stack web application built with Angular for the frontend, Node.js for th
 User authentication and authorization.  
 RESTful API for CRUD operations.  
 Responsive and dynamic frontend with Angular.  
-MySQL database for data persistence.  
+MongoDB database for data persistence.  
 Error handling and input validation.  
 Token-based authentication (e.g., JWT).  
 
@@ -19,13 +19,13 @@ Backend:
 Node.js  
 Express.js  
 Database:    
-MySQL   
+MongoDB     
 
 **Prerequisites**  
 Ensure the following are installed on your machine:  
 Node.js  
 Angular CLI  
-MySQL  
+MongoDB    
 
 **Project Structure**  
 bash   
@@ -70,22 +70,18 @@ In the server directory, create a .env file:
 touch .env    
 Add the following:   
   
-env   
-DB_HOST=localhost     
-DB_USER=root   
-DB_PASSWORD=yourpassword   
-DB_NAME=yourdatabase  
+env    
+DB_URI=mongodb://localhost:27017/yourdatabase  
 JWT_SECRET=your_secret_key  
-PORT=3080  
+PORT=5000   
+
+If using MongoDB Atlas, your DB_URI might look like this:  
+DB_URI=mongodb+srv://username:password@cluster.mongodb.net/yourdatabase?retryWrites=true&w=majority  
+
+
 Update these values based on your MySQL configuration.  
  
-**Step 4: Set Up the MySQL Database**  
-Open your MySQL client and run the following:  
-sql  
-CREATE DATABASE yourdatabase;  
-Import the schema if you have a .sql file:  
 
-mysql -u root -p yourdatabase < path/to/schema.sql 
 Running the Application  
 Frontend (Angular)  
 Navigate to the client directory:  
